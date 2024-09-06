@@ -1,3 +1,6 @@
+/* dink42 bara nämner några grejer, vill påminna om kommentera kåden :) */
+/* Don't forget to comment your code! */
+/* Border on universal selector should not be used, atleast when code complete */
 *{
     border: 1px solid black;
 }
