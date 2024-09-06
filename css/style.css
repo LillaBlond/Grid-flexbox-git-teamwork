@@ -99,7 +99,27 @@ footer {
         }
 }
 
+/* Tablet view  */
 @media screen and (max-width: 960px) {
+
+    /* Sets footers orientation to 2 by 2 */
+    footer {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+        "foot1 foot2"
+        "foot3 foot4";
+       
+    }
+
+    /* Sets the entire pages distribution of elements to the correct proportions */
+    .container {
+        grid-template-rows: 1fr 1fr 1fr 2fr;
+        grid-template-areas: 
+        "header header header header header header header header header header header header"
+        "box1 box1 box1 box1 box2 box2 box2 box2 box3 box3 box3 box3"
+        "content content content content content content sidebar sidebar sidebar sidebar sidebar sidebar"
+        "footer footer footer footer footer footer footer footer footer footer footer footer";        
+    }
     
 }
 
