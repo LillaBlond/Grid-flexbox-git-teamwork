@@ -3,12 +3,42 @@
 /* Border on universal selector should not be used, atleast when code complete */
 *{
     border: 1px solid black;
+     
 }
 
 body{
     background-image: url(../bilder/12_col.gif);
     background-size: 90%;
     margin: 10px 0 10px 0;
+}
+
+
+.container{
+    display: grid;
+    width: 90vw;
+    margin: 20px auto;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 4, 1fr;
+    gap: 20px;
+    grid-template-areas:
+    "header header header header header header header header header header header header";
+}
+
+header{
+    grid-area: header;
+}
+
+
+.box-1{
+    grid-area: box1;
+}
+
+.box-2{
+    grid-area: box2;
+}
+
+.box-3{
+    grid-area: box3;
 }
 
 footer {
@@ -23,10 +53,6 @@ footer {
     height: 200px;
 }
 
-
-
-
-
 @media screen and (max-width: 1200px) {
     
 }
@@ -38,9 +64,3 @@ footer {
 @media screen and (max-width: 768px) {
  
 }
-
-.container{
-    
-}
-
-.box-1{
