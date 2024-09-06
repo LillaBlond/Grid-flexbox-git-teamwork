@@ -80,5 +80,18 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
- 
+   
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header header"
+        "box1 box1"
+        "box2 box2"
+        "box3 box3"
+        "content content"
+        "sidbar sidbar"
+        "Footer Footer";
+    }
+
+    
 }
