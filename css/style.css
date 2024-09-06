@@ -8,10 +8,28 @@ body{
     margin: 10px 0 10px 0;
 }
 
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1200px) {
+    
+}
+
+@media screen and (max-width: 960px) {
+    
+}
+
+@media screen and (max-width: 768px) {
+ 
+}
+
 .container{
     
 }
 
 .box-1{
-    
-}
