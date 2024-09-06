@@ -62,5 +62,12 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
- 
+   
+    .container {
+
+        grid-template-areas: 
+        "header header header header";
+    }
+
+    
 }
