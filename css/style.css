@@ -18,7 +18,7 @@ body{
     width: 90%;;
     margin: 20px auto;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 4, 1fr;
+    grid-template-rows: repeat(4, 1fr);
     gap: 20px;
     grid-template-areas:
     "header header header header header header header header header header header header"
@@ -80,5 +80,19 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
- 
+    .container{
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas:
+    "header header header header header header header header header header header header"
+    "box1 box1 box1 box1 box1 box1 box1 box1 box1 box1 box1 box1"
+    "box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2"
+    "box3 box3 box3 box3 box3 box3 box3 box3 box3 box3 box3 box3"
+    "content content content content content content content content content content content content"
+    "sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar"
+    "footer footer footer footer footer footer footer footer footer footer footer footer"
+    }
+
+    footer {
+        grid-column: 1 / span 4;
+    }
 }
