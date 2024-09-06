@@ -62,7 +62,7 @@ header{
 footer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-column: 1 / 13;
+    grid-column: 1 /13;
     gap: 10px;
     padding: 10px;
 }
@@ -89,9 +89,13 @@ footer {
         "box2 box2"
         "box3 box3"
         "content content"
-        "sidbar sidbar"
-        "Footer Footer";
+        "sidebar sidebar";
     }
+
+    footer {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+      }
 
     
 }
