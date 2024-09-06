@@ -1,5 +1,13 @@
+*{
+    border: 1px solid black;
+}
+
 body{
     background-image: url(../bilder/12_col.gif);
     background-size: 90%;
     margin: 10px 0 10px 0;
+}
+
+.container{
+    
 }
