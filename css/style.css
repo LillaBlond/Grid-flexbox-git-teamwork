@@ -64,10 +64,28 @@ footer {
     grid-area: footer;
     gap: 10px;
     padding: 10px;
+    grid-template-areas: 
+    "foot1 foot2 foot3 foot4";
 }
 
 .section-footer {
     height: 200px;
+}
+
+#foot1 {
+    grid-area: foot1;
+}
+
+#foot2 {
+    grid-area: foot2;
+}
+
+#foot3 {
+    grid-area: foot3;
+}
+
+#foot4 {
+    grid-area: foot4;
 }
 
 @media screen and (max-width: 1200px) {
