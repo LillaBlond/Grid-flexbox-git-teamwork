@@ -1,5 +1,6 @@
 *{
     border: 1px solid black;
+     
 }
 
 body{
@@ -9,9 +10,29 @@ body{
 }
 
 .container{
-    
+    display: grid;
+    width: 90vw;
+    margin: 20px auto;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 4, 1fr;
+    gap: 20px;
+    grid-template-areas:
+    "header header header header header header header header header header header header";
 }
 
+header{
+    grid-area: header;
+}
+
+
 .box-1{
-    
+    grid-area: box1;
+}
+
+.box-2{
+    grid-area: box2;
+}
+
+.box-3{
+    grid-area: box3;
 }
