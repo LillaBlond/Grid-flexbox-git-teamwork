@@ -88,6 +88,26 @@ footer {
     grid-area: foot4;
 }
 
+.header-flex{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    height: fit-content;
+}
+
+#button-container{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#button4{
+    margin-left: auto;
+}
+
+#button1, #button2, #button3{
+    margin: 10px;
+}
+
 @media screen and (max-width: 1200px) {
     
     .container{
