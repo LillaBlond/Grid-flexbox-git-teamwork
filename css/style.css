@@ -1,56 +1,72 @@
-/* dink42 bara nämner några grejer, vill påminna om kommentera kåden :) */
 /* Don't forget to comment your code! */
-/* Border on universal selector should not be used, atleast when code complete */
-*{
-    border: 1px solid black;
-     
+* {
+    box-sizing: border-box;
 }
 
-body{
+body {
     background-image: url(../bilder/12_col.gif);
     background-size: 90%;
     margin: 10px 0 10px 0;
 }
 
-
-.container{
+.container {
     display: grid;
-    width: 90%;;
+    width: 90%;
     margin: 20px auto;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(4, 1fr);
+    border: 1px solid black;
     gap: 20px;
     grid-template-areas:
-    "header header header header header header header header header header header header"
-    "box1 box1 box2 box2 box2 box2 box2 box2 box2 box2 box3 box3"
-    "content content content content content content content content content sidebar sidebar sidebar"
-    "footer footer footer footer footer footer footer footer footer footer footer footer"
+        "header header header header header header header header header header header header"
+        "box1 box1 box2 box2 box2 box2 box2 box2 box2 box2 box3 box3"
+        "main-content main-content main-content main-content main-content main-content main-content main-content main-content sidebar sidebar sidebar"
+        "footer footer footer footer footer footer footer footer footer footer footer footer"
     ;
 }
 
-header{
+/** 
+* Moved a bit of the code around,
+* so it's easier to follow.
+* It's easier for others to follow the code and,
+* less prone for bugs.
+* Didn't change order of all code chunks just the most obvious ones.
+*/
+
+header {
     grid-area: header;
     height: 200px;
+    border: 1px solid black;
 }
 
+[class*=box-] {
+    border: 1px solid black;
+}
 
-.box-1{
+.box-1 {
     grid-area: box1;
     height: 200px;
 }
 
-.box-2{
+.box-2 {
     grid-area: box2;
     height: 200px;
 }
 
-.box-3{
+.box-3 {
     grid-area: box3;
     height: 200px;
 }
 
-#content{
-    grid-area: content;
+/**
+* "content" is an attribute in CSS grids.
+* Changed it to main-content to avoid bugs,
+* Before it was in different syntax color and could interfere with the code.
+* Changed it just to be sure.
+*/
+
+#content {
+    grid-area: main-content;
     height: auto;
 }
 
@@ -62,17 +78,20 @@ header{
     justify-content: space-evenly;
     gap: 10px;
     padding: 10px;
+    border: 1px solid black;
 }
 
 .content-section {
     height: 120px;
     width: 350px;
     flex-grow: 1;
+    border: 1px solid black;
 }
 
-#sidebar{
+#sidebar {
     grid-area: sidebar;
     height: 200px;
+    border: 1px solid black;
 }
 
 footer {
@@ -80,12 +99,17 @@ footer {
     grid-area: footer;
     gap: 10px;
     padding: 10px;
-    grid-template-areas: 
-    "foot1 foot2 foot3 foot4";
+    border: 1px solid black;
+    grid-template-areas:
+        "foot1 foot2 foot3 foot4";
 }
 
 .section-footer {
     height: 200px;
+}
+
+[id*=foot] {
+    border: 1px solid black;
 }
 
 #foot1 {
@@ -104,72 +128,83 @@ footer {
     grid-area: foot4;
 }
 
-.header-flex{
+.header-flex {
     display: flex;
     align-items: center;
     padding: 20px;
     height: fit-content;
 }
 
-#button-container{
+#button-container {
     display: flex;
     flex-wrap: nowrap;
 }
 
-#button4{
+#button4 {
     margin-left: auto;
+    border-radius: 4px;
 }
 
-#button1, #button2, #button3{
+/**
+* Cleaned up from your awsome work,
+* added a bit of border radious on buttons.
+* I have mostly just changed some things for,
+* better readability.
+* I did not find any easy or small fix for the extra whitespace changing just the already added css.
+*/
+
+#button1,
+#button2,
+#button3 {
     margin: 10px;
+    border-radius: 10px;
 }
 
 @media screen and (max-width: 1200px) {
-    
-    .container{
+
+    .container {
         grid-template-areas:
-        "header header header header header header header header header header header header"
-        "box1 box1 box1 box2 box2 box2 box2 box2 box2 box3 box3 box3"
-        "content content content content content content content content sidebar sidebar sidebar sidebar"
-        "footer footer footer footer footer footer footer footer footer footer footer footer"
-        }
+            "header header header header header header header header header header header header"
+            "box1 box1 box1 box2 box2 box2 box2 box2 box2 box3 box3 box3"
+            "main-content main-content main-content main-content main-content main-content main-content main-content main-content sidebar sidebar sidebar"
+            "footer footer footer footer footer footer footer footer footer footer footer footer"
+    }
 }
 
 /* Tablet view  */
 @media screen and (max-width: 960px) {
 
     /* Sets footers orientation to 2 by 2 */
-    footer {
-        grid-template-rows: repeat(2, 1fr);
-        grid-template-areas: 
-        "foot1 foot2"
-        "foot3 foot4";
-       
+    .container {
+        grid-template-rows: 1fr 1fr 1fr 2fr;
+        grid-template-areas:
+            "header header header header header header header header header header header header"
+            "box1 box1 box1 box1 box2 box2 box2 box2 box3 box3 box3 box3"
+            "main-content main-content main-content main-content main-content main-content main-content main-content main-content sidebar sidebar sidebar"
+            "footer footer footer footer footer footer footer footer footer footer footer footer";
+
     }
 
     /* Sets the entire pages distribution of elements to the correct proportions */
-    .container {
-        grid-template-rows: 1fr 1fr 1fr 2fr;
-        grid-template-areas: 
-        "header header header header header header header header header header header header"
-        "box1 box1 box1 box1 box2 box2 box2 box2 box3 box3 box3 box3"
-        "content content content content content content sidebar sidebar sidebar sidebar sidebar sidebar"
-        "footer footer footer footer footer footer footer footer footer footer footer footer";        
+    footer {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+            "foot1 foot2"
+            "foot3 foot4";
     }
-    
+
 }
 
 @media screen and (max-width: 768px) {
-   
-    .container {
-        grid-template-areas: 
-        "header header header header header header header header header header header header"
-        "box1 box1 box1 box1 box1 box1 box1 box1 box1 box1 box1 box1"
-        "box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2"
-        "box3 box3 box3 box3 box3 box3 box3 box3 box3 box3 box3 box3"
-        "content content content content content content content content content content content content"
-        "sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar"
-        "footer footer footer footer footer footer footer footer footer footer footer footer";
-    }
 
+    .container {
+        grid-template-areas:
+            "header header header header header header header header header header header header"
+            "box1 box1 box1 box1 box1 box1 box1 box1 box1 box1 box1 box1"
+            "box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2 box2"
+            "box3 box3 box3 box3 box3 box3 box3 box3 box3 box3 box3 box3"
+            "main-content main-content main-content main-content main-content main-content main-content main-content main-content main-content main-content main-content"
+            "sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar"
+            "footer footer footer footer footer footer footer footer footer footer footer footer";
+    }
 }
