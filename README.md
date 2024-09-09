@@ -2,7 +2,7 @@
 
 > [!NOTE]
 > Welcome to this project!
-> Want to contribute? Check the .\Contribute file.
+> [Contribution guidelines for this project](docs/CONTRIBUTING.md)
 
 ## About the project
 
