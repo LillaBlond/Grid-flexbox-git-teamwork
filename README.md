@@ -2,7 +2,7 @@
 
 > [!NOTE]
 > Welcome to this project!
-> [Contribution guidelines for this project](docs/CONTRIBUTING.md)
+> [Contribution guidelines for this project](CONTRIBUTING.md)
 
 ## About the project
 
